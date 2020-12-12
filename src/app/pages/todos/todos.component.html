@@ -1,18 +1,17 @@
 <div class="container">
   <ul *ngIf="todoList" class="list-group list-group-flush todos-list">
-    <li *ngFor="let item of todoList" ngClass="{'is-done': item.isDone}" class="list-group-item todos-item">
+    <li *ngFor="let item of todoList" class="list-group-item todos-item">
 
       <header class="todo-header">
         <div class="d-flex">
           <i class="material-icons check-box">
-            {{item.isDone ? 'check_box' : 'check_box_outline_blank'}}
+            {{(item.isDone) ? 'check_box' : 'check_box_outline_blank'}}
           </i>
-
           <h5 [class.is-done]="item.isDone"> {{item.title}}</h5>
         </div>
         <div class="todo-btn-group">
-          <button class="btn btn-primary" [disabled]="item.description">show/hide detailis</button>
-          <button class="btn btn-denger">del</button>
+          <button class="btn btn-primary" [disabled]="!item.description">show/hide detailis</button>
+          <button class="btn btn-danger">del</button>
         </div>
       </header>
 
@@ -21,8 +20,5 @@
       </div>
     </li>
   </ul>
-
-
   <p *ngIf="!todoList" class="text-center">No Data.</p>
-
 </div>
