@@ -6,6 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+    }
   }
   
   .check-box {
@@ -20,3 +23,6 @@
   .todo-description {
     padding: 10px 0px;
   }
+  
+  
+  
