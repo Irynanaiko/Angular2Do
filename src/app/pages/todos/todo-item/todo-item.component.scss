@@ -1,0 +1,25 @@
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+    }
+  }
+  .is-done {
+    text-decoration: line-through;
+  }
+  
+  .check-box {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  .todo-btn-group button:not(:last-child) {
+    margin-right: 5px;
+  }
+  
+  .todo-description {
+    padding: 10px 0px;
+  }
+  

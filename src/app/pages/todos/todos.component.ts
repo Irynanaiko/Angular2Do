@@ -7,16 +7,24 @@ import { Todo } from 'src/app/core/interfaces';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+ 
   todoList: Array<Todo>;
+
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
       this.todoList = TODO_DATA;
+    }, 2000,);
+     
   }
 
 }
 
-const TODO_DATA = [{
+// const TODO_DATA = [];
+
+const TODO_DATA = 
+[{
   id: 1,
   title: 'Learn JS',
   description: '',
