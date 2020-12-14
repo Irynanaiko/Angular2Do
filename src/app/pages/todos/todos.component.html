@@ -1,15 +1,15 @@
 <div class="container">
   <ul class="list-group list-group-flush todos-list">
 
-    <app-todo-item [todoList]="todoList"></app-todo-item>
+    <app-todo-item *ngFor="let todo of todoList" [todo]="todo"></app-todo-item>
 
   </ul>
 
   <p *ngIf="!todoList" class="text-center">No Data.</p>
 
-
-  <p *ngIf="todoList.length === 0" class="text-center create-list">Todo list is empty. Please create your first todo.
-  </p>
+  <div *ngIf="todoList && !todoList.length" class="text-center">
+    <p>Todo list is empty. Please create your first todo.</p>
+  </div>
 
 
 </div>
