@@ -1,0 +1,27 @@
+<form #newTodoForm="ngForm" class="app-new-todo" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input class="form-control" placeholder="Todo title" type="text" [(ngModel)]="title" name="title" required
+      #newTodoTitle="ngModel" [ngClass]="{
+          'is-invalid': newTodoTitle.invalid && isSubmit,
+          'is-valid': newTodoTitle.valid && isSubmit
+      }">
+    <!-- [ngClass]="{
+        'is-invalid': newTodoTitle.invalid && (newTodoTitle.dirty || newTodoTitle.touched),
+        'is-valid': newTodoTitle.valid && (newTodoTitle.dirty || newTodoTitle.touched)
+    }" -->
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" placeholder="Description" name="description" [(ngModel)]="description"
+      rows="3"></textarea>
+  </div>
+
+
+  <footer>
+    <!-- [disabled]="newTodoForm.invalid" -->
+    <button class="btn btn-primary" (click)="onSubmit()" type="submit">
+      Create
+    </button>
+  </footer>
+
+</form>

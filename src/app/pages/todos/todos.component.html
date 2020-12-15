@@ -1,4 +1,6 @@
 <div class="container">
+  <app-new-todo></app-new-todo>
+
   <ul class="list-group list-group-flush todos-list">
 
     <app-todo-item *ngFor="let todo of todoList" [todo]="todo"></app-todo-item>
