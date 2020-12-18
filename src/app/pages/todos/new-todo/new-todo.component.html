@@ -1,18 +1,25 @@
-<form #newTodoForm="ngForm" class="app-new-todo" (ngSubmit)="onSubmit()">
+<form [formGroup]="newTodoForm" class="app-new-todo" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <input class="form-control" placeholder="Todo title" type="text" [(ngModel)]="title" name="title" required
-      #newTodoTitle="ngModel" [ngClass]="{
-          'is-invalid': newTodoTitle.invalid && isSubmit,
-          'is-valid': newTodoTitle.valid && isSubmit
-      }">
+
+    <input class="form-control" placeholder="Todo title" type="text" name="title" formControlName="title" [ngClass]="{
+      'is-invalid': titleControl.invalid && isSubmit,
+      'is-valid': titleControl.valid && isSubmit
+    }">
+
     <!-- [ngClass]="{
         'is-invalid': newTodoTitle.invalid && (newTodoTitle.dirty || newTodoTitle.touched),
         'is-valid': newTodoTitle.valid && (newTodoTitle.dirty || newTodoTitle.touched)
     }" -->
+
+    <div class="invalid-feedback" *ngIf="titleControl.errors && isSubmit">
+      <span *ngIf="titleControl.errors.required">This field is required</span>
+      <span *ngIf="titleControl.errors.minlength">Text must be more than
+        {{titleControl.errors['minlength']['requiredLength']}} symbols.</span>
+    </div>
   </div>
 
   <div class="form-group">
-    <textarea class="form-control" placeholder="Description" name="description" [(ngModel)]="description"
+    <textarea formControlName="description" class="form-control" placeholder="Description" name="description"
       rows="3"></textarea>
   </div>
 
