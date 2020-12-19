@@ -1,37 +1,36 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Todo } from '../../interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodoService {
-  todoData: Array<Todo> = TODO_DATA;
+  todoData = new Subject<Array<Todo>>();
 
-  constructor() { }
+  private url = environment.url + '/todos';
 
-  // getTodoData(): Array<Todo> {
-  //   return this.todoData;
-  // } 
+  constructor(private http: HttpClient) {
+    this.getTodoData();
+  }
 
-  getTodoData(): Observable<Array<Todo>> {
-    return new Observable((observer) => {
-      observer.next(this.todoData);
-      observer.complete();
+  private getTodoData(): void {
+    this.http.get<Array<Todo>>(this.url).subscribe((data) => {
+      this.todoData.next(data);
     });
-  } 
-}
+  }
 
-const TODO_DATA = 
-[{
-  id: 1,
-  title: 'Learn JS',
-  description: '',
-  isDone: true
-}, {
-  id: 2,
-  title: 'Learn Angular',
-  description: 'Test description text',
-  isDone: false
+  delTodo(todoId: number): void {
+    this.http.delete(`${this.url}/${todoId}`).subscribe(() => {
+      this.getTodoData();
+    });
+  }
+
+  addTodo(newTodo: Todo): void {
+    this.http.post(this.url, newTodo).subscribe(() => this.getTodoData());
+  }
+
+  updateTodo(): void {}
 }
-];

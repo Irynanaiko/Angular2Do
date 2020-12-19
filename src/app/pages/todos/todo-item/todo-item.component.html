@@ -12,7 +12,7 @@
         {{(isDescriptionShow) ? 'hide details' : 'show details'}}
       </button>
 
-      <button class="btn btn-danger">del</button>
+      <button (click)="delTodo(todo.id)" class="btn btn-danger">del</button>
     </div>
   </header>
 
