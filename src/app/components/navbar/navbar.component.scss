@@ -1,0 +1,7 @@
+.app-navbar .navbar-nav {
+    flex-direction: row;
+  }
+  
+  .app-navbar .nav-item:not(:last-child) {
+    margin-right: 16px;
+  }

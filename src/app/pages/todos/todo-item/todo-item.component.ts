@@ -23,4 +23,9 @@ export class TodoItemComponent implements OnInit {
   delTodo(todoId: number): void {
     this.todoService.delTodo(todoId);
   }
+
+  toggleTodo(): void {
+    this.todo.isDone = !this.todo.isDone;
+    this.todoService.updateTodo(this.todo.id, this.todo);
+  }
 }

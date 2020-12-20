@@ -10,6 +10,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { TodoItemComponent } from './pages/todos/todo-item/todo-item.component';
 import { NewTodoComponent } from './pages/todos/new-todo/new-todo.component';
+import { FilterTodoPipe } from './shared/pipes/filter-todo/filter-todo.pipe';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AboutComponent } from './pages/about/about.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutProjectComponent } from './pages/about/about-project/about-project.component';
+import { AboutUsComponent } from './pages/about/about-us/about-us.component';
+import { UserComponent } from './pages/about/user/user.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,13 @@ import { NewTodoComponent } from './pages/todos/new-todo/new-todo.component';
     TodosComponent,
     TodoItemComponent,
     NewTodoComponent,
+    FilterTodoPipe,
+    PageNotFoundComponent,
+    AboutComponent,
+    NavbarComponent,
+    AboutProjectComponent,
+    AboutUsComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+.app-about {
+    display: flex;
+}
+
+.about-navbar {
+    flex-shrink: 0;
+    border-right: 1px solid #c1c1c1;
+
+    .active {
+        text-decoration: underline;
+    }
+}

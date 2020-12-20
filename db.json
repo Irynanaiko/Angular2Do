@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Learn JS",
       "description": "",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": 2,
@@ -13,18 +13,34 @@
       "isDone": false
     }
   ],
-  "test": [
+  "users": [
     {
       "id": 1,
-      "title": "Learn JS",
-      "description": "",
-      "isDone": true
+      "name": "Yolanda Byrd",
+      "email": "yolanda.byrd@example.com",
+      "description": "Some description",
+      "photo": "https://randomuser.me/api/portraits/women/51.jpg"
     },
     {
       "id": 2,
-      "title": "Learn Angular",
-      "description": "Test description text",
-      "isDone": false
+      "name": "Marsha Torres",
+      "email": "marsha.torres@example.com",
+      "description": "Some description",
+      "photo": "https://randomuser.me/api/portraits/women/56.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Keith Welch",
+      "email": "keith.welch@example.com",
+      "description": "Some description",
+      "photo": "https://randomuser.me/api/portraits/men/57.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Miguel Lucas",
+      "email": "miguel.lucas@example.com",
+      "description": "Some description",
+      "photo": "https://randomuser.me/api/portraits/men/17.jpg"
     }
   ]
 }

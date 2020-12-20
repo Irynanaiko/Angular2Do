@@ -2,7 +2,7 @@
 
   <header class="todo-header">
     <div class="d-flex todo-header-item">
-      <i class="material-icons check-box">
+      <i class="material-icons check-box" (click)="toggleTodo()">
         {{(todo.isDone) ? 'check_box' : 'check_box_outline_blank'}}
       </i>
       <h5 [class.is-done]="todo.isDone"> {{todo.title}}</h5>
