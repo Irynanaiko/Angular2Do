@@ -4,13 +4,15 @@
       "id": 1,
       "title": "Learn JS",
       "description": "",
-      "isDone": false
+      "isDone": false,
+      "priority": "medium"
     },
     {
       "id": 2,
       "title": "Learn Angular",
       "description": "Test description text",
-      "isDone": false
+      "isDone": false,
+      "priority": "hight"
     }
   ],
   "users": [

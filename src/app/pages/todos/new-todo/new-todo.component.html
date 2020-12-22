@@ -24,11 +24,34 @@
   </div>
 
 
-  <footer>
+  <footer class="d-flex">
+
+    <div class="container">
+
+      <div class="form-check form-check-inline">
+        <input formControlName="priority" class="form-check-input" type="radio" name="inlineRadioOptions"
+          id="inlineRadio1" value="low">
+        <label class="form-check-label" for="inlineRadio1">Low</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input formControlName="priority" class="form-check-input" type="radio" name="inlineRadioOptions"
+          id="inlineRadio2" value="medium">
+        <label class="form-check-label" for="inlineRadio2">Medium</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input formControlName="priority" class="form-check-input" type="radio" name="inlineRadioOptions"
+          id="inlineRadio3" value="hight">
+        <label class="form-check-label" for="inlineRadio3">Hight</label>
+      </div>
+
+    </div>
+
     <!-- [disabled]="newTodoForm.invalid" -->
     <button class="btn btn-primary" (click)="onSubmit()" type="submit">
       Create
     </button>
+
+
   </footer>
 
 </form>
