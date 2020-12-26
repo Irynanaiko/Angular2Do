@@ -1,16 +1,30 @@
 {
   "todos": [
     {
-      "id": 1,
+      "title": "Learn HTML",
+      "description": "Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. ... HTML describes the structure of a web page semantically and originally included cues for the appearance of the document. HTML elements are the building blocks of HTML pages.",
+      "isDone": false,
+      "priority": "low",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Learn CSS",
+      "description": " Cascading style sheets are used to format the layout of Web pages. They can be used to define text styles, table sizes, and other aspects of Web pages that previously could only be defined in a page's HTML.",
+      "isDone": false,
+      "priority": "low"
+    },
+    {
+      "id": 3,
       "title": "Learn JS",
-      "description": "",
+      "description": "JavaScript is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well. It is a prototype-based, multi-paradigm scripting language that is dynamic, and supports object-oriented, imperative, and functional programming styles.",
       "isDone": false,
       "priority": "medium"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Learn Angular",
-      "description": "Test description text",
+      "description": "",
       "isDone": false,
       "priority": "hight"
     }
@@ -20,28 +34,28 @@
       "id": 1,
       "name": "Yolanda Byrd",
       "email": "yolanda.byrd@example.com",
-      "description": "Some description",
+      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
       "photo": "https://randomuser.me/api/portraits/women/51.jpg"
     },
     {
       "id": 2,
       "name": "Marsha Torres",
       "email": "marsha.torres@example.com",
-      "description": "Some description",
+      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
       "photo": "https://randomuser.me/api/portraits/women/56.jpg"
     },
     {
       "id": 3,
       "name": "Keith Welch",
       "email": "keith.welch@example.com",
-      "description": "Some description",
+      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
       "photo": "https://randomuser.me/api/portraits/men/57.jpg"
     },
     {
       "id": 3,
       "name": "Miguel Lucas",
       "email": "miguel.lucas@example.com",
-      "description": "Some description",
+      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
       "photo": "https://randomuser.me/api/portraits/men/17.jpg"
     }
   ]

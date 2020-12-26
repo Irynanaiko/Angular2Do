@@ -9,15 +9,17 @@
       <span class="badge badge-pill">{{todo.priority}}</span>
     </div>
     <div class="todo-btn-group">
-      <button class="btn btn-primary" [disabled]="!todo.description" (click)="toggleDescription()">
+      <button class="btn btn-secondary" [disabled]="!todo.description" (click)="toggleDescription()" type="button">
         {{(isDescriptionShow) ? 'hide details' : 'show details'}}
       </button>
+      <button (click)="editTodo()" class="btn btn-primary" type="button">Edit</button>
 
-      <button (click)="delTodo(todo.id)" class="btn btn-danger">del</button>
+      <button (click)="delTodo(todo.id)" class="btn btn-danger" type="button">Delete</button>
     </div>
   </header>
 
   <div class="todo-description" *ngIf="isDescriptionShow">
     {{todo.description}}
   </div>
+
 </li>

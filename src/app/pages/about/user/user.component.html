@@ -1,2 +1,13 @@
-<p>user works!</p>
-<p>{{userData | json}}</p>
+<!-- <p>{{userData | json}}</p> -->
+
+<div class="container d-flex mt-4 mb-4">
+  <div>
+    <img class="user-photo" src="{{userData.photo}}" alt="user photo">
+  </div>
+
+  <div class="ml-5">
+    <h4 class="user-name">{{userData.name}}</h4>
+    <p class="user-description">{{userData.description}}</p>
+    <a class="user-email" [href]="'mailto:' + userData.email">{{userData.email}}</a>
+  </div>
+</div>

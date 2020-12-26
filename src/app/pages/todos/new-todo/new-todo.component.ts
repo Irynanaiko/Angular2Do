@@ -5,7 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { TodoService } from 'src/app/core/services/todo/todo.service';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { Todo } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-new-todo',
@@ -15,8 +16,9 @@ import { TodoService } from 'src/app/core/services/todo/todo.service';
 export class NewTodoComponent implements OnInit {
   newTodoForm: FormGroup;
   isSubmit = false;
-
-  constructor(private fb: FormBuilder, private todoService: TodoService) {}
+  modalHeader: string;
+  todo: Todo;
+  constructor(private fb: FormBuilder, private bsmodalRef: BsModalRef) {}
 
   ngOnInit(): void {
     this.createNewTodoForm();
@@ -38,24 +40,36 @@ export class NewTodoComponent implements OnInit {
     }
 
     this.isSubmit = false;
-    this.todoService.addTodo(this.newTodoForm.value);
-    this.newTodoForm.reset();
-    this.setDefaultValues();
+
+    this.save(this.newTodoForm.value);
+    this.modalHide();
+    // this.newTodoForm.reset();
+    // this.setDefaultValues();
+  }
+
+  modalHide(): void {
+    this.bsmodalRef.hide();
   }
 
   private createNewTodoForm(): void {
     this.newTodoForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(3)]],
-      description: [],
-      isDone: [false],
+      title: [
+        this.todo?.title || null,
+        [Validators.required, Validators.minLength(3)],
+      ],
+      description: [this.todo?.description || null],
+      isDone: [this.todo?.isDone || false],
       priority: ['low'],
+      id: [this.todo?.id || null],
     });
   }
 
-  private setDefaultValues(): void {
-    this.newTodoForm.value.isDone = false;
-    this.newTodoForm.controls['priority'].setValue('low');
-  }
+  private save(newTodo: Todo): void {}
+
+  // private setDefaultValues(): void {
+  //   this.newTodoForm.value.isDone = false;
+  //   this.newTodoForm.controls['priority'].setValue('low');
+  // }
   // private resetTodoForm(): void {
   //   this.newTodoForm.get('title').reset();
   //   this.newTodoForm.get('description').reset();

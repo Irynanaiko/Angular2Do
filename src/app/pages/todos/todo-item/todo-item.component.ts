@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/app/core/interfaces';
 import { TodoService } from 'src/app/core/services/todo/todo.service';
 
@@ -9,6 +9,7 @@ import { TodoService } from 'src/app/core/services/todo/todo.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
+  @Output() isEdit = new EventEmitter<Todo>();
 
   isDescriptionShow = false;
 
@@ -27,5 +28,9 @@ export class TodoItemComponent implements OnInit {
   toggleTodo(): void {
     this.todo.isDone = !this.todo.isDone;
     this.todoService.updateTodo(this.todo.id, this.todo);
+  }
+
+  editTodo(): void {
+    this.isEdit.emit(this.todo);
   }
 }

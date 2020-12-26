@@ -1,5 +1,7 @@
 <div class="container">
-  <app-new-todo></app-new-todo>
+  <!-- <app-new-todo></app-new-todo> -->
+
+  <button type="button" class="btn btn-primary create-btn" (click)="createNewTodo()">Create New Todo</button>
 
   <form class="d-flex ">
     <div class="form-group">
@@ -8,21 +10,21 @@
 
     <div class="container priority-form">
 
-      <div class="form-check form-check-inline">
+      <div class="form-check form-check-inline priority-radio">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">Low</label>
+        <label class="form-check-label checkmark " for="inlineRadio1">Low</label>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">Medium</label>
+      <div class="form-check form-check-inline priority-radio">
+        <input class="form-check-input " type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label checkmark" for="inlineRadio2">Medium</label>
       </div>
-      <div class="form-check form-check-inline">
+      <div class="form-check form-check-inline priority-radio">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">Hight</label>
+        <label class="form-check-label checkmark" for="inlineRadio3">Hight</label>
       </div>
-      <div class="form-check form-check-inline">
+      <div class="form-check form-check-inline priority-radio">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3">
-        <label class="form-check-label" for="inlineRadio4">All</label>
+        <label class="form-check-label checkmark" for="inlineRadio4">All</label>
       </div>
 
     </div>
@@ -30,7 +32,8 @@
 
   <ul class="list-group list-group-flush todos-list">
 
-    <app-todo-item *ngFor="let todo of todoList | filterTodo:search" [todo]=" todo"> </app-todo-item>
+    <app-todo-item *ngFor="let todo of todoList | filterTodo:search" [todo]=" todo" (isEdit)="editTodo($event)">
+    </app-todo-item>
 
   </ul>
 
@@ -42,3 +45,18 @@
 
 
 </div>
+
+
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
