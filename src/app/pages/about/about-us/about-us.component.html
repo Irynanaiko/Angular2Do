@@ -5,14 +5,13 @@
 
 <div class="row">
   <div class="col-sm-6 col-lg-3" *ngFor="let item of userList">
-    <div class="card" style="width: 17rem;">
+    <div class="card mb-4" style="width: 17rem;">
       <img [src]="item.photo" class="card-img-top" alt="Card image">
       <div class="card-body">
         <h5 class="card-title">{{item.name}}</h5>
-        <p class="card-text">{{item.description}}
-          <a [href]="'mailto:' + item.email">{{item.email}}</a>
-        </p>
-        <a class="btn btn-primary" [routerLink]="item.id">More info</a>
+        <p class="card-text">{{item.description}} </p>
+        <a [href]="'mailto:' + item.email">{{item.email}}</a>
+        <a class="btn btn-primary mt-3" [routerLink]="item.id">More info</a>
       </div>
     </div>
   </div>

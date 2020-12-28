@@ -11,6 +11,10 @@
 .priority-form {
   display: flex;
   justify-content: flex-end;
+
+  @media screen and (max-width: 750px) {
+    justify-content: flex-start;;
+  }
 }
 
 .seach-input {
@@ -23,4 +27,9 @@
 
 .priority-radio {
   align-items: center;
+}
+.seach-form {
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
 }

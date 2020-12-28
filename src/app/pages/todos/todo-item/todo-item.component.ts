@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+} from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Todo } from 'src/app/core/interfaces';
 import { TodoService } from 'src/app/core/services/todo/todo.service';
 
@@ -10,12 +18,20 @@ import { TodoService } from 'src/app/core/services/todo/todo.service';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() isEdit = new EventEmitter<Todo>();
+  modalRef: BsModalRef;
 
   isDescriptionShow = false;
 
-  constructor(private todoService: TodoService) {}
+  constructor(
+    private todoService: TodoService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit(): void {}
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
   toggleDescription(): void {
     this.isDescriptionShow = !this.isDescriptionShow;
@@ -23,6 +39,7 @@ export class TodoItemComponent implements OnInit {
 
   delTodo(todoId: number): void {
     this.todoService.delTodo(todoId);
+    this.modalRef.hide();
   }
 
   toggleTodo(): void {

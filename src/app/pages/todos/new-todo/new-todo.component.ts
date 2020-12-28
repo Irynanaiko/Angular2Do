@@ -43,8 +43,6 @@ export class NewTodoComponent implements OnInit {
 
     this.save(this.newTodoForm.value);
     this.modalHide();
-    // this.newTodoForm.reset();
-    // this.setDefaultValues();
   }
 
   modalHide(): void {

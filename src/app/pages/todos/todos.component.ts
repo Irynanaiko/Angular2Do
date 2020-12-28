@@ -29,19 +29,6 @@ export class TodosComponent implements OnInit {
       save: this.addNewTodo.bind(this),
     };
     this.openModal(initialState);
-    // this.modalRef = this.modalService.show(
-    //   NewTodoComponent,
-    //   Object.assign(
-    //     {},
-    //     {
-    //       ignoreBackdropClick: true,
-    //       initialState: {
-    //         modalHeader: 'New Todo',
-    //         save: this.addNewTodo.bind(this),
-    //       },
-    //     }
-    //   )
-    // );
   }
 
   editTodo(todo: Todo): void {

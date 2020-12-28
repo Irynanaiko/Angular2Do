@@ -24,7 +24,7 @@
     {
       "id": 4,
       "title": "Learn Angular",
-      "description": "",
+      "description": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. ... An app always has at least a root module that enables bootstrapping, and typically has many more feature modules.",
       "isDone": false,
       "priority": "hight"
     }
@@ -39,24 +39,24 @@
     },
     {
       "id": 2,
-      "name": "Marsha Torres",
-      "email": "marsha.torres@example.com",
-      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
-      "photo": "https://randomuser.me/api/portraits/women/56.jpg"
-    },
-    {
-      "id": 3,
       "name": "Keith Welch",
       "email": "keith.welch@example.com",
-      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
+      "description": "Expression alteration entreaties mrs can terminated estimating. Draw from upon here gone add one. Course sir people worthy horses add entire suffer. Up hung mr we give rest half. Able rent long in do we. Secure shy favour length all twenty denote. Strictly numerous outlived kindness whatever on we no on addition. ",
       "photo": "https://randomuser.me/api/portraits/men/57.jpg"
     },
     {
       "id": 3,
       "name": "Miguel Lucas",
       "email": "miguel.lucas@example.com",
-      "description": "Celebrated delightful an especially increasing instrument am. Fat new smallness few supposing suspicion two. Words to up style of since world.",
+      "description": "We leaf to snug on no need. Made neat an on be gave show snug tore. Happiness remainder joy but earnestly for off. Her too add narrow having wished. Expression alteration entreaties mrs can terminated estimating. Do play they miss give so up. Fat new smallness few supposing suspicion two. To sure calm much most long me mean. ",
       "photo": "https://randomuser.me/api/portraits/men/17.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Marsha Torres",
+      "email": "marsha.torres@example.com",
+      "description": "You high bed wish help call draw side. Secure shy favour length all twenty denote. Secure shy favour length all twenty denote. Fat new smallness few supposing suspicion two. Able rent long in do we. Limits far yet turned highly repair parish talked six. ",
+      "photo": "https://randomuser.me/api/portraits/women/58.jpg"
     }
   ]
 }

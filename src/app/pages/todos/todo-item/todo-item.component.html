@@ -10,11 +10,13 @@
     </div>
     <div class="todo-btn-group">
       <button class="btn btn-secondary" [disabled]="!todo.description" (click)="toggleDescription()" type="button">
-        {{(isDescriptionShow) ? 'hide details' : 'show details'}}
+        {{(isDescriptionShow) ? 'Hide details' : 'Show details'}}
       </button>
       <button (click)="editTodo()" class="btn btn-primary" type="button">Edit</button>
 
-      <button (click)="delTodo(todo.id)" class="btn btn-danger" type="button">Delete</button>
+
+
+      <button (click)="openModal(template)" class="btn btn-danger" type="button">Delete</button>
     </div>
   </header>
 
@@ -23,3 +25,16 @@
   </div>
 
 </li>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">Would you like to remove <b>{{todo.title}}</b> ?</h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button (click)="delTodo(todo.id)" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yes</button>
+    <button (click)="modalRef.hide()" type="button" class="btn btn-secondary">No</button>
+  </div>
+</ng-template>
